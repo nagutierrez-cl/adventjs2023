@@ -38,7 +38,15 @@ Con eso en mente podemos concluir que las cadenas de texto tendrán el mismo tam
 
 La solución parte con retornar directamente el caso ideal, que ambos sean iguales.
 
-Luego se calcula el maxLength, el cual es el tamaño de la cadena de texto más grande. En base a ese número podemos iterar e ir comparando por posición.
+```js
+if (original === modified) return '';
+```
+
+Luego se calcula el tamaño de la cadena de texto más grande. En base a ese número podemos iterar e ir comparando por posición.
+
+```js
+const maxLength = Math.max(original.length, modified.length);
+```
 
 Cómo sabemos que solo habrá una diferencia, la retornaremos inmediatamente, se extrae de la cadena de texto original o modificada, dependiendo de cual haya sido la que tenga más carácteres.
 
