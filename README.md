@@ -10,7 +10,7 @@ Muchas gracias a [midudev](https://github.com/midudev) por la iniciativa, sorteo
 | :-: | ------------------------------------------------------------------------- | --------------  | ---------------------------------------------------------------------------------- 
 | 01  | [¡Primer regalo repetido!](https://adventjs.dev/es/challenges/2023/1)     | 🟢             | [Ver](https://github.com/nagutierrez-cl/adventjs2023/blob/main/01/README.md) 
 | 02  | [Ponemos en marcha la fábrica](https://adventjs.dev/es/challenges/2023/2) | 🟢             | [Ver](https://github.com/nagutierrez-cl/adventjs2023/blob/main/02/README.md) 
-| 03  | ~~~~~                                                                     |                | ~~~~~                                                                              
+| 03  | [El elfo travieso](https://adventjs.dev/es/challenges/2023/3)             | 🟢             | [Ver](https://github.com/nagutierrez-cl/adventjs2023/blob/main/03/README.md)                   
 | 04  | ~~~~~                                                                     |                | ~~~~~                                                                              
 | 05  | ~~~~~                                                                     |                | ~~~~~                                                                              
 | 06  | ~~~~~                                                                     |                | ~~~~~                                                                              
