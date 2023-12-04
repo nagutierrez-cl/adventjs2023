@@ -31,14 +31,7 @@ Notas:
 
 Para enfrentar éste problema debemos identificar los carácteres que estén dentro de parentesis y los debemos invertir. Cómo también se menciona, pueden existir paréntesis anidados.
 
-El enfoque de ésta solución será tomar la parte de la cadena de texto que esté contenida en un paréntesis, extraerla, modificarla y reemplazarla, de forma reiteratiba hasta que no hayan más paréntesis.
-
-```js
-hola (odnum) => hola mundo
-```
-
-Para resolver el problema de los paréntesis anidados, primero debemos resolver los de dentro, para eso, utilizaremos lastIndexOf, el cual capturará la posición del
-paréntesis de más a la derecha.
+Para resolver el problema de los paréntesis anidados, primero debemos resolver los de dentro, para eso, utilizaremos lastIndexOf, el cual capturará la posición del último paréntesis (el de más a la derecha).
 
 Flujo de trabajo del algoritmo:
 
@@ -46,21 +39,24 @@ Flujo de trabajo del algoritmo:
 sa(u(cla)atn)s => sa(ualcatn)s => santaclaus
 ```
 
-Éste será nuestro punto de partida.
+Para lograr ésto, tenemos que contemplar un punto de partida y fin, para poder crear un substring y reemplazar los carácteres.
+
+El punto de inicio es el último paréntesis abierto encontrado, y el fin es el primer paréntesis cerrado luego de nuestro punto de inicio.
 
 ```js
 const inicio = message.lastIndexOf('(');
-```
-
-Partiremos desde aquí hasta que encontremos el cierre de paréntesis, lo que envuelve a la palabra que debemos invertir. El punto final de nuestra operación lo calculamos con indexOf.
-
-```js
 const fin = message.indexOf(')', inicio);
 ```
 
-Ahora solamente nos queda quitar los paréntesis, invertir los carácteres de dentro y guardar los cambios en la variable.
+Una vez tenemos nuestro rango a trabajar, podemos hacer el substring, el cual va desde nuestro punto de inicio + 1 (para eliminar el paréntesis) hasta nuestro punto final.
 
-Para ello creamos un substring, partiendo desde el punto de inicio + 1 (para eliminar el paréntesis) hasta el último carácter antes del paréntesis. Invertimos el substring y reemplazamos el substring completo del paréntesis original con el que se acaba de crear.
+Realizamos la operación de invertir los carácteres del substring y lo reemplazamos en el mensaje original.
+
+```js
+const sub = message.substring(inicio + 1, fin);
+const reversed = sub.split('').reverse().join('');
+message = message.replace(message.substring(inicio, fin + 1), reversed);
+```
 
 Finalmente iteramos mientras la cadena de texto contenga un paréntesis, para ejecutar todas las operaciones que sean necesarias.
 
